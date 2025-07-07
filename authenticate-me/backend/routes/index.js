@@ -4,6 +4,7 @@ const router = express.Router();
 const apiRouter = require('./api')
 router.use('/api', apiRouter);
 
+
 router.get('/hello/world', (req, res) => {
     res.cookie('XSRF-TOKEN', req.csrfToken());
     res.send('Hello World');
@@ -16,6 +17,7 @@ router.get('/api/csrf/restore', (req, res) => {
         "XSRF-TOKEN": csrfToken
     });
 });
+
 
 
 module.exports = router;
